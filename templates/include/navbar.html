@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Library</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+
+    .navbar {
+      background-color: #3586ff;
+      color: #fff;
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 8px;
+      background-color: #3586ff;
+      transition: background-color 0.2s ease;
+    }
+
+    .navbar-brand:hover {
+      background-color: #6499e7;
+    }
+
+    .navbar-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    .navbar-links li {
+      margin-left: 20px;
+    }
+
+    .navbar-links li a {
+      text-decoration: none;
+      color: #fff;
+      padding: 8px 16px;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .navbar-links li a .material-icons {
+      margin-right: 5px;
+    }
+
+    .navbar-links li a:hover {
+      background-color: #6499e7;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border-radius: 4px;
+      padding: 5px 10px;
+      margin-right: 20px;
+    }
+
+    .search-bar input {
+      border: none;
+      outline: none;
+      margin-left: 5px;
+    }
+
+    .navbar-icons {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-icons .material-icons {
+      margin-left: 10px;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Media qurilmalari uchun qo'shimcha stilar */
+    @media screen and (max-width: 768px) {
+      .navbar-links {
+        display: none; /* Kattalashib ko'rsatilmagan holatda navbarni yashirish */
+      }
+
+      .search-bar,
+      .navbar-icons {
+        display: flex; /* Kattalashib ko'rsatilgan holatda search bar va ikonlarni ko'rsatish */
+      }
+
+      .navbar.active .navbar-links {
+        display: flex; /* Menu tugmasi bosilganda navbarni kattalashib ko'rsatish */
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: #0f5c03e0;
+        flex-direction: column;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    /* Footer stili */
+    .footer {
+      background-color: #0f5c03e0;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .footer-links li {
+      display: inline-block;
+      margin-right: 10px;
+    }
+
+    .footer-links li a {
+      text-decoration: none;
+      color: #fff;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links li a:hover {
+      color: #2fd515e0;
+    }
+  </style>
+</head>
+<body>
+<div class="navbar">
+  <a href="#" class="navbar-brand">NamMQI</a>
+  <div class="search-bar">
+    <i class="material-icons">search</i>
+    <form action='searchall'method="GET">
+    <input type="text" name="soz" placeholder="Search...">
+    </form>
+  </div>
+  <ul class="navbar-links">
+    <li><a  href="{% url 'home-page' %}"><i class="material-icons">home</i>Bosh sahifa</a></li>
+    <li><a href="#"><i class="material-icons">menu_book</i>Kitoblar</a></li>
+    <li><a href="{% url 'maqola-page' %}"><i class="material-icons">menu_book</i>Maqolalar</a></li>
+    <li><a href="{% url 'contact-page'%}"><i class="material-icons">mail</i>Bo'glanish</a></li>
+    <li><a href="{% url 'about-page'%}"><i class="material-icons">info</i>Biz haqimizda</a></li>
+    <li><a href="#"><i class="material-icons">person</i>Kirish</a></li>
+  </ul>
+  <div class="navbar-icons">
+    <i class="material-icons">shopping_cart</i>
+    <i class="material-icons">settings</i>
+  </div>
+</div>

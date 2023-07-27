@@ -1,0 +1,23 @@
+Flutter run key commands.
+r Hot reload.
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).        
+c Clear the screen
+q Quit (terminate the application on the device).
+
+body: Card(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            Image.network(
+              'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYveO4wrf93ZP6pVGa8I9KVM8Q5N59XqDrgw&usqp=CAU',
+              fit: BoxFit.cover,
+            ),
+            ListTile(
+              title: Text('First Star Developers',style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),
+              subtitle: Text('First Star Developers MCHJ oz ichiga bir nechta Kuchli dasturchilarni oz ichiga oaldi'),
+            ),
+          ],
+        ),
+      ),
